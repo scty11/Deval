@@ -10,11 +10,20 @@ import { appRoutes } from './routes';
 import { AuthService } from './services/auth.service';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
+import { HomeComponent } from './components/home/home.component';
+import { AuthGuard } from './guards/auth.guard';
+import { ProfileComponent } from './components/profile/profile.component';
+import { MatCardModule, MatInputModule, MatDatepickerModule, MatNativeDateModule } from '@angular/material';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    ProfileComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -24,9 +33,13 @@ import { environment } from '../environments/environment';
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebase),
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    MatCardModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
-  providers: [AuthService],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
