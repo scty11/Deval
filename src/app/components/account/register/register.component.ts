@@ -16,18 +16,17 @@ export class RegisterComponent implements OnInit {
   form: FormGroup;
   error = '';
 
-  constructor(private fb: FormBuilder, private authService: AuthService) {
-
-  }
-
-  ngOnInit() {
-    this.form = this.fb.group({
+  constructor(fb: FormBuilder, private authService: AuthService) {
+    this.form = fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
       confirmPassword: ['']
     }, {
         validator: PasswordValidators.passwordsShouldMatch
       });
+  }
+
+  ngOnInit() {
   }
 
   register({ value, valid }: { value: any, valid: boolean }) {

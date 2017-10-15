@@ -3,15 +3,15 @@
   <mat-form-field>
     <input matInput placeholder="Email" formControlName="email" required>
     <mat-error *ngIf="form.controls['email'].errors?.email">
-      Please enter your email
+      Please enter a email
     </mat-error>
   </mat-form-field>
   <mat-form-field>
     <input type="password" matInput placeholder="Password" formControlName="password" required>
     <mat-error *ngIf="form.controls['password'].errors?.required">
-      Please enter your password
+      Please enter a password
     </mat-error>
   </mat-form-field>
-  <button mat-raised-button color="primary" class="pull-right">Login</button>
+  <button mat-raised-button color="primary" [disabled]="!form.valid" class="pull-right">Login</button>
   <div class="clearfix"></div>
 </form>
