@@ -1,0 +1,17 @@
+<mat-card>
+  <h2>Profile Information</h2>
+  <mat-form-field>
+    <input matInput placeholder="First Name" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Last Name" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [matDatepicker]="picker" placeholder="D.O.B" required>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker touchUi="true" #picker></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field class="example-full-width ">
+    <textarea matInput placeholder="Personal Description" required></textarea>
+  </mat-form-field>
+</mat-card>
