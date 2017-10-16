@@ -18,7 +18,7 @@ export class ProfileComponent implements OnInit {
   // tslint:disable-next-line:member-ordering
   customStyle = {
     selectButton: {
-      'background-color': '#FF1654',
+      'background-color': '#247ba0',
       'border-radius': '25px',
       'color': '#fff'
     },
@@ -32,7 +32,7 @@ export class ProfileComponent implements OnInit {
       'background-color': 'white',
       'border-radius': '25px',
       'color': '#FFF',
-      'font-size': '15px',
+      'font-size': '10px',
       'margin': '0 auto',
       'padding-top': '5px',
       'width': '70%'

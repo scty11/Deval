@@ -13,7 +13,7 @@ import { environment } from '../environments/environment';
 import { HomeComponent } from './components/home/home.component';
 import { AuthGuard } from './guards/auth.guard';
 import { ProfileComponent } from './components/profile/profile.component';
-import { MatCardModule, MatInputModule, MatDatepickerModule, MatNativeDateModule } from '@angular/material';
+import { MatCardModule, MatInputModule, MatDatepickerModule, MatNativeDateModule, MatButtonModule } from '@angular/material';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { ImageUploadModule } from 'angular2-image-upload';
 
@@ -41,6 +41,7 @@ import { ImageUploadModule } from 'angular2-image-upload';
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatButtonModule
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
