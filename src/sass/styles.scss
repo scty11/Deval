@@ -17,12 +17,18 @@
   font-size: 20px!important;
 }
 
+.mat-fab.mat-primary,
+.mat-mini-fab.mat-primary,
+.mat-raised-button.mat-primary {
+  background-color: $primary;
+}
+
 body {
   background: #c33764;
   /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #c33764, #1d2671);
+  background: -webkit-linear-gradient(to right, $gradient1, $gradient2);
   /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #c33764, #1d2671);
+  background: linear-gradient(to right, $gradient1, $gradient2);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
@@ -48,7 +54,7 @@ h2 {
 h2:after {
   display: block;
   height: 2px;
-  background: $underline-color;
+  background: $gradient2;
   content: " ";
   width: 100px;
   margin: 0 auto;
