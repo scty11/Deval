@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule, MatInputModule, MatCardModule, MatDatepickerModule, MatNativeDateModule, MatListModule, MatSelectModule, MatTabsModule } from '@angular/material';
 import { LoginComponent } from './login/login.component';
 import { AccountComponent } from './account.component';
+import { ImageUploadModule } from 'angular2-image-upload';
 
 
 const accountRoutes: Routes = [
@@ -22,7 +23,8 @@ const accountRoutes: Routes = [
     MatInputModule,
     MatCardModule,
     MatTabsModule,
-    RouterModule.forChild(accountRoutes)
+    RouterModule.forChild(accountRoutes),
+    ImageUploadModule.forRoot()
   ],
   declarations: [RegisterComponent, LoginComponent, AccountComponent]
 })

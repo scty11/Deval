@@ -15,6 +15,8 @@ import { AuthGuard } from './guards/auth.guard';
 import { ProfileComponent } from './components/profile/profile.component';
 import { MatCardModule, MatInputModule, MatDatepickerModule, MatNativeDateModule } from '@angular/material';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { ImageUploadModule } from 'angular2-image-upload';
+
 
 
 
@@ -34,6 +36,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebase),
     RouterModule.forRoot(appRoutes),
+    ImageUploadModule.forRoot(),
     MatCardModule,
     MatInputModule,
     MatDatepickerModule,

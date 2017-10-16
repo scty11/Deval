@@ -1,5 +1,6 @@
 <mat-card>
   <h2>Profile Information</h2>
+  <image-upload [style]="customStyle" buttonCaption="Upload Image" [max]="1" (uploadFinished)="onUploadFinished($event)"></image-upload>
   <mat-form-field>
     <input matInput placeholder="First Name" required>
   </mat-form-field>
