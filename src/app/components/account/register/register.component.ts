@@ -3,6 +3,7 @@ import { Component, OnInit, ViewChild, Output, EventEmitter } from '@angular/cor
 import { FormGroup, FormGroupDirective, FormBuilder, Validators } from '@angular/forms';
 import { PasswordValidators } from './register-validators';
 import { AuthService } from '../../../services/auth.service';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-register',
@@ -16,7 +17,7 @@ export class RegisterComponent implements OnInit {
   form: FormGroup;
   error = '';
 
-  constructor(private fb: FormBuilder, private authService: AuthService) {
+  constructor(private fb: FormBuilder, private authService: AuthService, private snackBar: MatSnackBar) {
 
   }
 
@@ -37,6 +38,9 @@ export class RegisterComponent implements OnInit {
         this.selectedTab.emit(0);
         this.myForm.resetForm();
         this.error = '';
+        this.snackBar.open('Registered', 'You\'ve successfully registered!' , {
+          duration: 2000,
+        });
       })
       .catch((err) => {
         this.error = err.message;
