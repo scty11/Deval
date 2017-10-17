@@ -6,11 +6,6 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: 'AIzaSyB_DbmE9Lv0OlTSMWB74yHkR8_aWRT5EPw',
-    authDomain: 'deval-7be1a.firebaseapp.com',
-    databaseURL: 'https://deval-7be1a.firebaseio.com',
-    projectId: 'deval-7be1a',
-    storageBucket: 'deval-7be1a.appspot.com',
-    messagingSenderId: '629765317230'
+
   }
 };
