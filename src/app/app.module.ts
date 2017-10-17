@@ -16,6 +16,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { MatCardModule, MatInputModule, MatDatepickerModule, MatNativeDateModule, MatButtonModule } from '@angular/material';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { ImageUploadModule } from 'angular2-image-upload';
+import { UploadService } from './services/upload.service';
 
 
 
@@ -43,7 +44,7 @@ import { ImageUploadModule } from 'angular2-image-upload';
     MatNativeDateModule,
     MatButtonModule
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [AuthService, AuthGuard, UploadService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

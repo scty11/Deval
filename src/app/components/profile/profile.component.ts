@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FileHolder } from 'angular2-image-upload';
+import { UploadService } from '../../services/upload.service';
+import { Upload } from '../../models/upload';
 
 @Component({
   selector: 'app-profile',
@@ -7,13 +9,17 @@ import { FileHolder } from 'angular2-image-upload';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-  img: string;
-  constructor() { }
+  img: Upload;
+  constructor(private upSvc: UploadService) { }
 
   ngOnInit() {
   }
   onUploadFinished(file: FileHolder) {
-    this.img = file.src;
+    this.img = new Upload(file.file);
+  }
+
+  save() {
+    this.upSvc.pushUpload(this.img);
   }
   // tslint:disable-next-line:member-ordering
   customStyle = {
