@@ -5,7 +5,7 @@ import { RegisterComponent } from './register/register.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // tslint:disable-next-line:max-line-length
-import { MatButtonModule, MatInputModule, MatCardModule, MatDatepickerModule, MatNativeDateModule, MatListModule, MatSelectModule, MatTabsModule } from '@angular/material';
+import { MatButtonModule, MatSnackBarModule,MatInputModule, MatCardModule, MatDatepickerModule, MatNativeDateModule, MatListModule, MatSelectModule, MatTabsModule } from '@angular/material';
 import { LoginComponent } from './login/login.component';
 import { AccountComponent } from './account.component';
 import { ImageUploadModule } from 'angular2-image-upload';
@@ -23,6 +23,7 @@ const accountRoutes: Routes = [
     MatInputModule,
     MatCardModule,
     MatTabsModule,
+    MatSnackBarModule,
     RouterModule.forChild(accountRoutes),
     ImageUploadModule.forRoot()
   ],
