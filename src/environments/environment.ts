@@ -10,7 +10,7 @@ export const environment = {
     authDomain: 'devalclient-c366b.firebaseapp.com',
     databaseURL: 'https://devalclient-c366b.firebaseio.com',
     projectId: 'devalclient-c366b',
-    storageBucket: '',
+    storageBucket: 'devalclient-c366b.appspot.com',
     messagingSenderId: '401145449270'
   }
 };
