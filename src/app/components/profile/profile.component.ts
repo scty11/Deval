@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FileHolder } from 'angular2-image-upload';
-import { UploadService } from '../../services/upload.service';
 import { Upload } from '../../models/upload';
+import { ProfileService } from '../../services/profile.service';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { Profile } from '../../models/profile';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -10,16 +13,26 @@ import { Upload } from '../../models/upload';
 })
 export class ProfileComponent implements OnInit {
   img: Upload;
-  constructor(private upSvc: UploadService) { }
+  form: FormGroup;
+
+  constructor(private fb: FormBuilder, private proSvc: ProfileService, private router: Router) { }
 
   ngOnInit() {
+    this.form = this.fb.group({
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      dateOfBirth: ['', Validators.required],
+      personalDescription: ['']
+    });
   }
+
   onUploadFinished(file: FileHolder) {
     this.img = new Upload(file.file);
   }
 
-  save() {
-    this.upSvc.pushUpload(this.img);
+  async save({ value, valid }: { value: Profile, valid: boolean }) {
+    await this.proSvc.saveProfile(this.img, value);
+    this.router.navigate(['/home']);
   }
   // tslint:disable-next-line:member-ordering
   customStyle = {

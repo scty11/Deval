@@ -1,3 +1,4 @@
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { BrowserModule } from '@angular/platform-browser';
@@ -13,10 +14,11 @@ import { environment } from '../environments/environment';
 import { HomeComponent } from './components/home/home.component';
 import { AuthGuard } from './guards/auth.guard';
 import { ProfileComponent } from './components/profile/profile.component';
-import { MatCardModule,MatSnackBarModule, MatInputModule, MatDatepickerModule, MatNativeDateModule, MatButtonModule } from '@angular/material';
+// tslint:disable-next-line:max-line-length
+import { MatCardModule, MatSnackBarModule, MatInputModule, MatDatepickerModule, MatNativeDateModule, MatButtonModule } from '@angular/material';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { ImageUploadModule } from 'angular2-image-upload';
-import { UploadService } from './services/upload.service';
+import { ProfileService } from './services/profile.service';
 
 
 
@@ -33,7 +35,7 @@ import { UploadService } from './services/upload.service';
     FormsModule,
     ReactiveFormsModule,
     AngularFireModule,
-    AngularFirestoreModule,
+    AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebase),
     RouterModule.forRoot(appRoutes),
@@ -45,7 +47,7 @@ import { UploadService } from './services/upload.service';
     MatButtonModule,
     MatSnackBarModule
   ],
-  providers: [AuthService, AuthGuard, UploadService],
+  providers: [AuthService, AuthGuard, ProfileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
