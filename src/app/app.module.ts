@@ -20,6 +20,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { ImageUploadModule } from 'angular2-image-upload';
 import { ProfileService } from './services/profile.service';
 import { ProfileGuard } from './guards/profile.guard';
+import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 
 
 
@@ -47,7 +48,9 @@ import { ProfileGuard } from './guards/profile.guard';
     MatNativeDateModule,
     MatButtonModule,
     MatSnackBarModule,
-    MatSidenavModule
+    MatSidenavModule,
+    FroalaEditorModule.forRoot(),
+    FroalaViewModule.forRoot()
   ],
   providers: [AuthService, AuthGuard, ProfileService, ProfileGuard],
   bootstrap: [AppComponent]

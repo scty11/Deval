@@ -1,4 +1,11 @@
 <app-nav-bar></app-nav-bar>
-<mat-card>
-  Test
-</mat-card>
+<div [froalaEditor]="options"></div>
+
+<div class='feed-container' [@listAnimation]='feed.length'>
+
+  <mat-card *ngFor="let item of feed">
+
+    {{item}}
+  </mat-card>
+
+</div>

@@ -1,5 +1,15 @@
-mat-card {
+mat-card:not(:first-child) {
+  margin-top: 5px;
+}
+
+.feed-container {
   width: 70%;
   margin: 0 auto;
-  margin-top: 10%;
+  margin-top: 5px;
+}
+
+.fr-box {
+  width: 70% !important;
+  margin: 0 auto;
+  margin-top: 5%;
 }
