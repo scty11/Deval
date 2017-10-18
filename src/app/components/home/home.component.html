@@ -1,11 +1,14 @@
 <app-nav-bar></app-nav-bar>
-<div [froalaEditor]="options"></div>
+<mat-card class="editor-card">
+  <div [froalaEditor]="options" [(froalaModel)]="editorContent"></div>
+  <button mat-raised-button color="primary" (click)="add()" class="pull-right add-button">Post</button>
+  <div class="clearfix "></div>
+</mat-card>
 
 <div class='feed-container' [@listAnimation]='feed.length'>
 
-  <mat-card *ngFor="let item of feed">
-
-    {{item}}
+  <mat-card *ngFor="let item of feed ">
+    <div [froalaView]="item"></div>
   </mat-card>
 
 </div>

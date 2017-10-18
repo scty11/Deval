@@ -2,6 +2,10 @@ mat-card:not(:first-child) {
   margin-top: 5px;
 }
 
+mat-card:first-child {
+  margin-top: 15px;
+}
+
 .feed-container {
   width: 70%;
   margin: 0 auto;
@@ -9,7 +13,16 @@ mat-card:not(:first-child) {
 }
 
 .fr-box {
-  width: 70% !important;
   margin: 0 auto;
   margin-top: 5%;
+}
+
+.editor-card {
+  width: 70%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.add-button {
+  margin: 10px;
 }

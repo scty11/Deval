@@ -12,21 +12,32 @@ import { transition, trigger, query, stagger, animate, style } from '@angular/an
         stagger(100, [
           animate('1s', style({ opacity: 1 }))
         ])
-      ])
+      ], { optional: true })
     ])
   ])]
 })
 export class HomeComponent implements OnInit {
   feed = [];
+  // tslint:disable-next-line:max-line-length
+  editorContent: string;
   options: Object = {
     placeholderText: 'Deval your day!...',
     toolbarButtons: ['bold', 'italic', 'underline', 'emoticons']
   };
+
   constructor() {
-    this.feed = [0, 1, 2, 3, 4];
   }
 
   ngOnInit() {
+
+  }
+
+  add() {
+    if (!this.editorContent === undefined
+      || this.editorContent.length > 0) {
+
+      this.feed.push(this.editorContent);
+    }
 
   }
 
