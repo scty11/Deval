@@ -3,17 +3,26 @@
   <form [formGroup]="form" novalidate (ngSubmit)="save(form)">
     <mat-form-field>
       <input matInput placeholder="First Name" formControlName="firstName" required>
+      <mat-error *ngIf="form.controls['firstName'].errors">
+        Please enter your first name
+      </mat-error>
     </mat-form-field>
     <mat-form-field>
       <input matInput placeholder="Last Name" required formControlName="lastName">
+      <mat-error *ngIf="form.controls['lastName'].errors">
+        Please enter your last name
+      </mat-error>
     </mat-form-field>
     <mat-form-field>
       <input matInput [matDatepicker]="picker" placeholder="D.O.B" formControlName="dateOfBirth" required>
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker touchUi="true" #picker></mat-datepicker>
+      <mat-error *ngIf="form.controls['lastName'].errors">
+        Please enter your date of birth
+      </mat-error>
     </mat-form-field>
     <mat-form-field class="example-full-width ">
-      <textarea matInput placeholder="Personal Description" required formControlName="personalDescription"></textarea>
+      <textarea matInput placeholder="Personal Description" formControlName="personalDescription"></textarea>
     </mat-form-field>
     <image-upload [style]="customStyle" buttonCaption="Upload Profile Picture" clearButtonCaption="Remove" [max]="1" (uploadFinished)="onUploadFinished($event)"></image-upload>
     <button mat-raised-button color="primary" class="pull-right">Save</button>

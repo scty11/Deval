@@ -15,10 +15,11 @@ import { HomeComponent } from './components/home/home.component';
 import { AuthGuard } from './guards/auth.guard';
 import { ProfileComponent } from './components/profile/profile.component';
 // tslint:disable-next-line:max-line-length
-import { MatCardModule, MatSnackBarModule, MatInputModule, MatDatepickerModule, MatNativeDateModule, MatButtonModule } from '@angular/material';
+import { MatCardModule, MatSnackBarModule, MatInputModule, MatDatepickerModule, MatNativeDateModule, MatButtonModule, MatSidenavModule } from '@angular/material';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { ImageUploadModule } from 'angular2-image-upload';
 import { ProfileService } from './services/profile.service';
+import { ProfileGuard } from './guards/profile.guard';
 
 
 
@@ -45,9 +46,10 @@ import { ProfileService } from './services/profile.service';
     MatDatepickerModule,
     MatNativeDateModule,
     MatButtonModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatSidenavModule
   ],
-  providers: [AuthService, AuthGuard, ProfileService],
+  providers: [AuthService, AuthGuard, ProfileService, ProfileGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -31,8 +31,16 @@ export class ProfileComponent implements OnInit {
   }
 
   async save({ value, valid }: { value: Profile, valid: boolean }) {
-    await this.proSvc.saveProfile(this.img, value);
-    this.router.navigate(['/home']);
+    if (valid) {
+      if (this.img) {
+        await this.proSvc.saveProfileWithImage(this.img, value);
+        this.router.navigate(['/home']);
+      } else {
+        await this.proSvc.saveProfile(value);
+        this.router.navigate(['/home']);
+      }
+    }
+
   }
   // tslint:disable-next-line:member-ordering
   customStyle = {
